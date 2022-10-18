@@ -1,0 +1,38 @@
+.contato .imagem {
+  grid-column: 2;
+}
+
+.contatos {
+  grid-column: 3;
+}
+
+.contatos li a {
+  display: block;
+  margin-bottom: 1rem;
+  color: #222;
+  font-family: Helvetica, Arial;
+}
+
+.contatos li a::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 10px;
+  margin-right: 10px;
+  background: #fb5;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 818px 1fr;
+}
+
+.footer p {
+  background: #fb5;
+  padding: 20px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  grid-column: 3 / -1;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: bold;
+}
