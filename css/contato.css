@@ -2,10 +2,6 @@
   grid-column: 2;
 }
 
-.contatos {
-  grid-column: 3;
-}
-
 .contatos li a {
   display: block;
   margin-bottom: 1rem;
@@ -22,17 +18,24 @@
   background: #fb5;
 }
 
-.footer {
-  display: grid;
-  grid-template-columns: 1fr 1fr 818px 1fr;
-}
-
 .footer p {
   background: #fb5;
   padding: 20px;
   margin-top: 32px;
   margin-bottom: 32px;
-  grid-column: 3 / -1;
+  grid-column: 2 / -1;
   font-family: "IBM Plex Mono", monospace;
   font-weight: bold;
+}
+
+@media (max-width: 700px) {
+  .footer p {
+    margin-bottom: 0;
+    grid-column: 1 / -1;
+  }
+
+  .contatos,
+  .contato .imagem {
+    grid-column: 1 / 4;
+  }
 }

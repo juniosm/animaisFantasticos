@@ -25,3 +25,13 @@
   font-family: Helvetica, Arial;
   margin-left: 30px;
 }
+
+@media (max-width: 700px) {
+  .faq dl {
+    grid-column: 1/-1;
+  }
+
+  .faq dt:first-child {
+    margin-top: 0;
+  }
+}
