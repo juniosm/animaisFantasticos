@@ -10,11 +10,15 @@
   color: #e54;
   margin-bottom: 0.5rem;
   margin-top: 2rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  cursor: pointer;
 }
 
 .faq dt::before {
   content: "";
-  display: inline-block;
+  display: block;
   width: 20px;
   height: 10px;
   margin-right: 10px;
@@ -33,5 +37,34 @@
 
   .faq dt:first-child {
     margin-top: 0;
+  }
+}
+
+.js .js-acordion dd {
+  display: none;
+  transition: 0.3s;
+}
+
+.js-acordion dt::after {
+  content: "⮟";
+}
+
+.js-acordion dt.ativo::after {
+  content: "⮝";
+}
+
+.js-acordion dd.ativo {
+  display: block;
+  animation: sliderDown 0.5s forwards;
+}
+
+@keyframes sliderDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    max-height: 200px;
+    opacity: 1;
   }
 }
