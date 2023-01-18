@@ -16,20 +16,30 @@
 
 <body>
   <header class="header grid-barra" id="header">
-    <nav class="menu js-menu">
-      <ul>
+    <nav class="menu " data-menu="suave">
+      <button data-menu="button" aria-expanded="false" aria-controls="menu"></button>
+      <ul class="menu-list" data-menu="list" id="menu">
         <li><a href="#animais">Animais</a></li>
+        <li data-dropdown>
+          <a href="/sobre">Sobre</a>
+          <ul class="drop-menu">
+            <li><a href="empresa.html">A Empresa</a></li>
+            <li><a href="equipe.html">Equipe</a></li>
+            <li><a href="socios.html">Sócios</a></li>
+            <li><a href="investidores.html">Investidores</a></li>
+          </ul>
+        </li>
         <li><a href="#faq">Faq</a></li>
         <li><a href="#contato">Contato</a></li>
-        <li><a href="/">Dev</a></li>
+        <li><a data-modal="abrir" href="">Login</a></li>
       </ul>
     </nav>
   </header>
   <main>
-    <section id="animais" class="js-scroll">
+    <section id="animais" data-anime="scroll">
       <div class="animais conteiner grid">
         <h1 class="titulo">Animais Fantásticos</h1>
-        <div class="imagens js-tabMenu">
+        <div class="imagens" data-tab="menu">
           <img src="./img/imagem1.jpg" alt="Raposa">
           <img src="./img/imagem2.jpg" alt="Esquilo">
           <img src="./img/imagem3.jpg" alt="Urso">
@@ -37,43 +47,43 @@
           <img src="./img/imagem5.jpg" alt="Macaco">
           <img src="./img/imagem6.jpg" alt="Leão">
         </div>
-        <div class="infos js-conteudo">
-          <div class="info">
+        <div class="infos" data-tab="conteudo">
+          <div class="info" data-anime="show-right">
             <h3>Raposa</h3>
             <p>As raposas são animais mamíferos e onívoros pertencentes à família Canidae. São vulpídeos de porte médio, caracterizados por um focinho comprido e uma cauda longa e peluda.</p>
             <p>Também apresentam como particularidade suas pupilas ovais, semelhantes às pupilas verticais dos felídeos.</p>
             <p>De cerca de 40 espécies reconhecidas como raposas, somente 12 pertencem ao gênero Vulpes das "raposas verdadeiras", do qual a raposa vermelha é a mais comum.</p>
             <p>Também apresentam como particularidade suas pupilas ovais, semelhantes às pupilas verticais dos felídeos.</p>
           </div>
-          <div class="info">
+          <div class="info" data-anime="show-down">
             <h3>Esquilo</h3>
             <p>As raposas são animais mamíferos e onívoros pertencentes à família Canidae. São vulpídeos de porte médio, caracterizados por um focinho comprido e uma cauda longa e peluda.</p>
             <p>Também apresentam como particularidade suas pupilas ovais, semelhantes às pupilas verticais dos felídeos.</p>
             <p>De cerca de 40 espécies reconhecidas como raposas, somente 12 pertencem ao gênero Vulpes das "raposas verdadeiras", do qual a raposa vermelha é a mais comum.</p>
             <p>Também apresentam como particularidade suas pupilas ovais, semelhantes às pupilas verticais dos felídeos.</p>
           </div>
-          <div class="info">
+          <div class="info" data-anime="show-right">
             <h3>Urso</h3>
             <p>As raposas são animais mamíferos e onívoros pertencentes à família Canidae. São vulpídeos de porte médio, caracterizados por um focinho comprido e uma cauda longa e peluda.</p>
             <p>Também apresentam como particularidade suas pupilas ovais, semelhantes às pupilas verticais dos felídeos.</p>
             <p>De cerca de 40 espécies reconhecidas como raposas, somente 12 pertencem ao gênero Vulpes das "raposas verdadeiras", do qual a raposa vermelha é a mais comum.</p>
             <p>Também apresentam como particularidade suas pupilas ovais, semelhantes às pupilas verticais dos felídeos.</p>
           </div>
-          <div class="info">
+          <div class="info" data-anime="show-down">
             <h3>Lobo</h3>
             <p>As raposas são animais mamíferos e onívoros pertencentes à família Canidae. São vulpídeos de porte médio, caracterizados por um focinho comprido e uma cauda longa e peluda.</p>
             <p>Também apresentam como particularidade suas pupilas ovais, semelhantes às pupilas verticais dos felídeos.</p>
             <p>De cerca de 40 espécies reconhecidas como raposas, somente 12 pertencem ao gênero Vulpes das "raposas verdadeiras", do qual a raposa vermelha é a mais comum.</p>
             <p>Também apresentam como particularidade suas pupilas ovais, semelhantes às pupilas verticais dos felídeos.</p>
           </div>
-          <div class="info">
+          <div class="info" data-anime="show-right">
             <h3>Macaco</h3>
             <p>As raposas são animais mamíferos e onívoros pertencentes à família Canidae. São vulpídeos de porte médio, caracterizados por um focinho comprido e uma cauda longa e peluda.</p>
             <p>Também apresentam como particularidade suas pupilas ovais, semelhantes às pupilas verticais dos felídeos.</p>
             <p>De cerca de 40 espécies reconhecidas como raposas, somente 12 pertencem ao gênero Vulpes das "raposas verdadeiras", do qual a raposa vermelha é a mais comum.</p>
             <p>Também apresentam como particularidade suas pupilas ovais, semelhantes às pupilas verticais dos felídeos.</p>
           </div>
-          <div class="info">
+          <div class="info" data-anime="show-down">
             <h3>Leão</h3>
             <p>As raposas são animais mamíferos e onívoros pertencentes à família Canidae. São vulpídeos de porte médio, caracterizados por um focinho comprido e uma cauda longa e peluda.</p>
             <p>Também apresentam como particularidade suas pupilas ovais, semelhantes às pupilas verticais dos felídeos.</p>
@@ -84,8 +94,8 @@
       </div>
     </section>
 
-    <section id="faq" class="js-scroll">
-      <div class="faq conteiner grid js-acordion">
+    <section id="faq" data-anime="scroll">
+      <div class="faq conteiner grid" data-anime="acordion">
         <h2 class="titulo">Faq</h2>
         <dl>
           <dt>Qual a idade dos animais?</dt>
@@ -103,17 +113,42 @@
       </div>
     </section>
 
-    <section id="contato" class="js-scroll">
+    <section id="numero" data-anime="scroll">
+      <div class="numero conteiner grid">
+        <h2 class="titulo">Números</h2>
+        <div class="numeros-grid">
+          <div class="numero-animal">
+            <h3>Lobos</h3>
+            <span data-numero>4874</span>
+          </div>
+          <div class="numero-animal">
+            <h3>Raposas</h3>
+            <span data-numero>5374</span>
+          </div>
+          <div class="numero-animal">
+            <h3>Esquilos</h3>
+            <span data-numero>12340</span>
+          </div>
+          <div class="numero-animal">
+            <h3>Ursos</h3>
+            <span data-numero>230</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" data-anime="scroll">
       <div class="contato conteiner grid">
         <h2 class="titulo">Contato</h2>
-        <div class="imagem">
+        <div class="imagem" data-tooltip aria-label="Local no mapa e isso e aquilo kkkk">
           <img src="./img/mapa.png" alt="mapa">
         </div>
         <ul class="contatos">
-          <li><a href="">contato@origamid.com</a></li>
-          <li><a href="">+55 (21) 9999-9999</a></li>
-          <li><a href="">Rua do Conde, nº 21</a></li>
-          <li><a href="">Rio de Janeiro - RJ</a></li>
+          <li>contato@origamid.com</li>
+          <li>+55 (21) 9999-9999</li>
+          <li>Rua do Conde, nº 21</li>
+          <li>Rio de Janeiro - RJ</li>
+          <li data-semana="1,2,3,4,5,6" data-horario="8,17">Seg à Sexta das 8 às 17:00</li>
         </ul>
       </div>
     </section>
@@ -124,7 +159,20 @@
       </p>
     </footer>
 
-    <script src="script.js"></script>
+    <section class="modal-container" data-modal="container">
+      <div class="modal">
+        <button class="fechar" data-modal="fechar">X</button>
+        <form action="">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Email">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" placeholder="Password">
+          <button type="submit">Entrar</button>
+        </form>
+      </div>
+    </section>
+
+    <script type="module" src="./js/script.js"></script>
   </main>
 </body>
 

@@ -1,0 +1,21 @@
+import initNavTab from "./modules/navTab.js";
+import initAcordion from "./modules/acordion.js";
+import initAnimaScroll from "./modules/animaScroll.js";
+import initScrollSmooth from "./modules/scrollSuave.js";
+import modal from "./modules/modal.js";
+import initTooltip from "./modules/tooltip.js";
+import initDropMenu from "./modules/drop-menu.js";
+import menuMobile from "./modules/menu-mobile.js";
+import animaNumeros from "./modules/animaNumeros.js";
+import initFuncionamento from "./modules/funcionamento.js";
+
+initAnimaScroll();
+initNavTab();
+initAcordion();
+initScrollSmooth();
+modal();
+initTooltip();
+initDropMenu();
+menuMobile();
+animaNumeros();
+initFuncionamento();

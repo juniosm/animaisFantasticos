@@ -40,20 +40,20 @@
   }
 }
 
-.js .js-acordion dd {
+.js [data-anime="acordion"] dd {
   display: none;
   transition: 0.3s;
 }
 
-.js-acordion dt::after {
+[data-anime="acordion"] dt::after {
   content: "⮟";
 }
 
-.js-acordion dt.ativo::after {
+[data-anime="acordion"] dt.ativo::after {
   content: "⮝";
 }
 
-.js-acordion dd.ativo {
+[data-anime="acordion"] dd.ativo {
   display: block;
   animation: sliderDown 0.5s forwards;
 }
