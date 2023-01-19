@@ -6,8 +6,9 @@ import modal from "./modules/modal.js";
 import initTooltip from "./modules/tooltip.js";
 import initDropMenu from "./modules/drop-menu.js";
 import menuMobile from "./modules/menu-mobile.js";
-import animaNumeros from "./modules/animaNumeros.js";
 import initFuncionamento from "./modules/funcionamento.js";
+import initFetchAnimais from "./modules/fetch-animais.js";
+import initBtcFetch from "./modules/btcFetch.js";
 
 initAnimaScroll();
 initNavTab();
@@ -17,5 +18,6 @@ modal();
 initTooltip();
 initDropMenu();
 menuMobile();
-animaNumeros();
 initFuncionamento();
+initFetchAnimais();
+initBtcFetch();
