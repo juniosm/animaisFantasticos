@@ -1,0 +1,28 @@
+{
+  "name": "animaisfantasticos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development --watch --entry ./js/script.js -o ./main.js",
+    "build": "webpack --mode production --entry ./js/script.js -o ./main"
+  },  
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juniosm/animaisFantasticos.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juniosm/animaisFantasticos/issues"
+  },
+  "homepage": "https://github.com/juniosm/animaisFantasticos#readme",
+  "devDependencies": {
+    "eslint": "^8.33.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-import": "^2.27.5",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  }
+}

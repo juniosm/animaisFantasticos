@@ -1,6 +1,14 @@
 import animaNumeros from "./animaNumeros.js";
 
 export default function initFetchAnimais() {
+  function createAnimais(animal) {
+    const createDiv = document.createElement("div");
+    createDiv.classList.add("numero-animal");
+    createDiv.innerHTML = `<h3>${animal.specie}</h3> 
+    <span data-numero> ${animal.total}</span>`;
+    return createDiv;
+  }
+
   async function fetchAnimais() {
     try {
       const response = await fetch("./animais.json");
@@ -14,14 +22,6 @@ export default function initFetchAnimais() {
     } catch (erro) {
       console.log(erro);
     }
-  }
-
-  function createAnimais(animal) {
-    const createDiv = document.createElement("div");
-    createDiv.classList.add("numero-animal");
-    createDiv.innerHTML = `<h3>${animal.specie}</h3> 
-    <span data-numero> ${animal.total}</span>`;
-    return createDiv;
   }
   fetchAnimais();
 }

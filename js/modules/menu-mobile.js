@@ -5,13 +5,13 @@ export default function menuMobile() {
   const menuList = document.querySelector('[data-menu="list"]');
   const eventos = ["click", "touchstart"];
 
-  if (bntMenu) {
-    function openMenu() {
-      bntMenu.classList.toggle("ativo");
-      menuList.classList.toggle("ativo");
-      outsideClick(menuList, eventos);
-    }
+  function openMenu() {
+    bntMenu.classList.toggle("ativo");
+    menuList.classList.toggle("ativo");
+    outsideClick(menuList, eventos);
+  }
 
+  if (bntMenu) {
     eventos.forEach(evento => {
       bntMenu.addEventListener(evento, openMenu);
     });

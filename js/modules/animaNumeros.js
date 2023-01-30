@@ -7,7 +7,7 @@ export default function animaNumeros() {
       const incre = Math.floor(total / 100);
       let i = 0;
       const time = setInterval(() => {
-        i = i + incre;
+        i += incre;
         numero.innerText = i;
         if (total < i) {
           numero.innerText = total;
@@ -16,15 +16,16 @@ export default function animaNumeros() {
       }, 25);
     });
   }
+
+  let observer;
   function handleMutation(mutation) {
     if (mutation[0].target.classList.contains("ativo")) {
-      observer.disconnect(  );
+      observer.disconnect();
       initAnima();
     }
   }
-
+  observer = new MutationObserver(handleMutation);
   const observerTarget = document.querySelector("#numero");
-  const observer = new MutationObserver(handleMutation);
 
   observer.observe(observerTarget, { attributes: true });
 }
