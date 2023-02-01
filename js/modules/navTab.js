@@ -27,5 +27,6 @@ export default class NavTab {
       this.ativeTab(0);
       this.addEventNavTab();
     }
+    return this;
   }
 }
