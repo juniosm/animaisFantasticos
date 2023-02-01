@@ -1,9 +1,9 @@
 import ScrollSmooth from "./modules/scrollSuave.js";
 import Acordion from "./modules/acordion.js";
 import NavTab from "./modules/navTab.js";
+import Modal from "./modules/modal.js";
 
 import initAnimaScroll from "./modules/animaScroll.js";
-import modal from "./modules/modal.js";
 import initTooltip from "./modules/tooltip.js";
 import initDropMenu from "./modules/drop-menu.js";
 import menuMobile from "./modules/menu-mobile.js";
@@ -23,8 +23,14 @@ const navTab = new NavTab(
 );
 navTab.init();
 
+const modal = new Modal(
+  '[data-modal="abrir"]',
+  '[data-modal="fechar"]',
+  '[data-modal="container"]'
+);
+modal.init();
+
 initAnimaScroll();
-modal();
 initTooltip();
 initDropMenu();
 menuMobile();
