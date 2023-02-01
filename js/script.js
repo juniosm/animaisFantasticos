@@ -1,7 +1,7 @@
 import ScrollSmooth from "./modules/scrollSuave.js";
 import Acordion from "./modules/acordion.js";
+import NavTab from "./modules/navTab.js";
 
-import initNavTab from "./modules/navTab.js";
 import initAnimaScroll from "./modules/animaScroll.js";
 import modal from "./modules/modal.js";
 import initTooltip from "./modules/tooltip.js";
@@ -17,8 +17,13 @@ scrollSmooth.init();
 const acordion = new Acordion("[data-anime='acordion'] dt");
 acordion.init();
 
+const navTab = new NavTab(
+  "[data-tab='menu'] img",
+  "[data-tab='conteudo'] .info"
+);
+navTab.init();
+
 initAnimaScroll();
-initNavTab();
 modal();
 initTooltip();
 initDropMenu();
