@@ -4,12 +4,11 @@ import NavTab from "./modules/navTab.js";
 import Modal from "./modules/modal.js";
 import Tooltip from "./modules/tooltip.js";
 import fetchAnimais from "./modules/fetch-animais.js";
-import AnimaScroll from "./modules/animaScroll.js";
 import btcFetch from "./modules/btcFetch.js";
+import AnimaScroll from "./modules/animaScroll.js";
 import DropMenu from "./modules/drop-menu.js";
 import MenuMobile from "./modules/menu-mobile.js";
-
-import initFuncionamento from "./modules/funcionamento.js";
+import Funcionamento from "./modules/funcionamento.js";
 
 const scrollSmooth = new ScrollSmooth("[data-menu='suave'] a[href^='#']");
 scrollSmooth.init();
@@ -33,16 +32,17 @@ modal.init();
 const tooltip = new Tooltip("[data-tooltip]", "ativo");
 tooltip.init();
 
-const animaScroll = new AnimaScroll(" [data-anime='scroll'] ");
+const animaScroll = new AnimaScroll("[data-anime='scroll']");
 animaScroll.init();
 
-const dropMenu = new DropMenu(" [data-dropdown] ");
+const dropMenu = new DropMenu("[data-dropdown]");
 dropMenu.init();
 
 const menuMobile = new MenuMobile('[data-menu="button"]', '[data-menu="list"]');
 menuMobile.init();
 
+const funcionamento = new Funcionamento("[data-semana]", "aberto");
+funcionamento.init();
+
 fetchAnimais("../animais.json", ".numeros-grid");
 btcFetch("https://www.blockchain.com/ticker", ".btc-preco");
-
-initFuncionamento();
