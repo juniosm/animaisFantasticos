@@ -34,6 +34,7 @@ const tooltip = new Tooltip("[data-tooltip]", "ativo");
 tooltip.init();
 
 const animaScroll = new AnimaScroll(" [data-anime='scroll'] ");
+animaScroll.init();
 
 fetchAnimais("../animais.json", ".numeros-grid");
 btcFetch("https://www.blockchain.com/ticker", ".btc-preco");
