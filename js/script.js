@@ -3,13 +3,13 @@ import Acordion from "./modules/acordion.js";
 import NavTab from "./modules/navTab.js";
 import Modal from "./modules/modal.js";
 import Tooltip from "./modules/tooltip.js";
+import fetchAnimais from "./modules/fetch-animais.js";
+import AnimaScroll from "./modules/animaScroll.js";
+import btcFetch from "./modules/btcFetch.js";
 
-import initAnimaScroll from "./modules/animaScroll.js";
 import initDropMenu from "./modules/drop-menu.js";
 import menuMobile from "./modules/menu-mobile.js";
 import initFuncionamento from "./modules/funcionamento.js";
-import fetchAnimais from "./modules/fetch-animais.js";
-import btcFetch from "./modules/btcFetch.js";
 
 const scrollSmooth = new ScrollSmooth("[data-menu='suave'] a[href^='#']");
 scrollSmooth.init();
@@ -33,10 +33,11 @@ modal.init();
 const tooltip = new Tooltip("[data-tooltip]", "ativo");
 tooltip.init();
 
+const animaScroll = new AnimaScroll(" [data-anime='scroll'] ");
+
 fetchAnimais("../animais.json", ".numeros-grid");
 btcFetch("https://www.blockchain.com/ticker", ".btc-preco");
 
-initAnimaScroll();
 initDropMenu();
 menuMobile();
 initFuncionamento();

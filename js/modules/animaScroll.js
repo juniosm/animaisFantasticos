@@ -1,21 +1,24 @@
 // Animação de scroll
 
-export default function initAnimaScroll() {
-  const sections = document.querySelectorAll(" [data-anime='scroll'] ");
-  const windowParte = window.innerHeight * 0.6;
+export default class AnimaScroll {
+  constructor(sections) {
+    this.sections = document.querySelectorAll(sections);
+    this.windowParte = window.innerHeight * 0.6;
+  }
 
-  function animaScroll() {
-    sections.forEach(section => {
-      const sectionTop = section.getBoundingClientRect().top - windowParte;
+  animaScroll() {
+    this.sections.forEach(section => {
+      const sectionTop = section.getBoundingClientRect().top - this.windowParte;
       if (sectionTop < 0) {
         section.classList.add("ativo");
       }
     });
   }
 
-  if (sections.length) {
-    animaScroll();
-
-    window.addEventListener("scroll", animaScroll);
+  init() {
+    if (this.sections.length) {
+      this.animaScroll();
+      window.addEventListener("scroll", this.animaScroll);
+    }
   }
 }
