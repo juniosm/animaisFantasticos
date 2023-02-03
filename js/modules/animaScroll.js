@@ -1,21 +1,43 @@
 // Animação de scroll
 
-export default function initAnimaScroll() {
-  const sections = document.querySelectorAll(" [data-anime='scroll'] ");
-  const windowParte = window.innerHeight * 0.6;
+export default class AnimaScroll {
+  constructor(sections) {
+    this.sections = document.querySelectorAll(sections);
+    this.windowParte = window.innerHeight * 0.6;
 
-  function animaScroll() {
-    sections.forEach(section => {
-      const sectionTop = section.getBoundingClientRect().top - windowParte;
-      if (sectionTop < 0) {
-        section.classList.add("ativo");
+    this.checkDistance = this.checkDistance.bind(this);
+  }
+
+  getDistance() {
+    this.distance = [...this.sections].map(section => {
+      const offset = section.offsetTop;
+      return {
+        elemet: section,
+        offset: offset - this.windowParte
+      };
+    });
+  }
+
+  checkDistance() {
+    this.distance.forEach(item => {
+      if (item.offset < window.pageYOffset) {
+        item.elemet.classList.add("ativo");
+      } else if (item.elemet.classList.contains("ativo")) {
+        item.elemet.classList.remove("ativo");
       }
     });
   }
 
-  if (sections.length) {
-    animaScroll();
+  init() {
+    if (this.sections.length) {
+      this.getDistance();
+      this.checkDistance();
+      window.addEventListener("scroll", this.checkDistance);
+    }
+    return this;
+  }
 
-    window.addEventListener("scroll", animaScroll);
+  stop() {
+    window.removeEventListener("scroll", this.checkDistance);
   }
 }
