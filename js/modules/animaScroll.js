@@ -1,11 +1,11 @@
-// Animação de scroll
+import debounce from "./debounce.js";
 
 export default class AnimaScroll {
   constructor(sections) {
     this.sections = document.querySelectorAll(sections);
     this.windowParte = window.innerHeight * 0.6;
 
-    this.checkDistance = this.checkDistance.bind(this);
+    this.checkDistance = debounce(this.checkDistance.bind(this), 50);
   }
 
   getDistance() {
@@ -13,14 +13,15 @@ export default class AnimaScroll {
       const offset = section.offsetTop;
       return {
         elemet: section,
-        offset: offset - this.windowParte
+        offset: Math.floor(offset - this.windowParte)
       };
     });
   }
 
   checkDistance() {
+    console.log("rs");
     this.distance.forEach(item => {
-      if (item.offset < window.pageYOffset) {
+      if (window.pageYOffset > item.offset) {
         item.elemet.classList.add("ativo");
       } else if (item.elemet.classList.contains("ativo")) {
         item.elemet.classList.remove("ativo");
